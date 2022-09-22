@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Card from '../components/Card/Card.jsx';
+
 
 const response = await fetch('https://api.adviceslip.com/advice');
 const data = await response.json();
+//todo refactor this component from astro component to react component
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,6 +14,7 @@ const data = await response.json();
 		id={data.slip.id}
 		advice={data.slip.advice}
 		/>
+		
 	</main>
 </Layout>
 
