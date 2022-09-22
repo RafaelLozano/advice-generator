@@ -1,7 +1,6 @@
 export const getAdvice = () => {
-    fetch('https://api.adviceslip.com/advice')
+    return fetch('https://api.adviceslip.com/advice')
     .then(res => {
-        console.log(res);
         return res.json();
     })
     .catch(()=>{
