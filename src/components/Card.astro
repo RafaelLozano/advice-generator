@@ -1,76 +1,76 @@
 ---
+
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+	id: string;
+	advice: string;
 }
 
-const { href, title, body } = Astro.props;
+const { id, advice } = Astro.props;
+
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<article class="advice__card">
+	<h1>ADVICE #{id}</h1>
+	<h2>"{advice}"</h2>
+	<div class="patronMobile">
+		<svg width="295" height="16" xmlns="http://www.w3.org/2000/svg">
+			<g fill="none" fill-rule="evenodd">
+				<path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z"/>
+				<g transform="translate(138)" fill="#CEE3E9">
+					<rect width="6" height="16" rx="3"/>
+					<rect x="14" width="6" height="16" rx="3"/>
+				</g>
+			</g>
+		</svg>
+	</div>
+	<div class="advice__diceContainer">
+		<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+			<path d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#202733"/>
+		</svg>
+	</div>
+</article>
 <style>
-	:root {
-		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
+	:root{
+		--card-bg:hsl(217, 19%, 24%);
+		--green-neon:hsl(150, 100%, 66%);
+		--advice:hsl(193, 38%, 86%);
 	}
-
-	.link-card {
-		list-style: none;
+	.advice__card{
+		position: relative;
 		display: flex;
-		padding: 0.15rem;
-		background-image: var(--link-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		flex-direction: column;
+		align-items: center;
+		background-color:var(--card-bg);
+		padding: 32px;
+		border-radius: 10px;
+		margin-top: 100px;
+		
 	}
-
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1em 1.3em;
-		border-radius: 0.35rem;
-		color: var(--text-color);
-		background-color: white;
-		opacity: 0.8;
+	.advice__card h1{
+		color:var(--green-neon);
+		margin-bottom: 32px;
+		font-size: 14px;
 	}
-
-	h2 {
-		margin: 0;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.advice__card h2{
+		color:var(--advice);
+		margin-bottom: 32px;
+		font-size: 32px;
 	}
-
-	p {
-		margin-top: 0.75rem;
-		margin-bottom: 0;
+	.advice__diceContainer{
+		position: absolute;
+		bottom: -16px;
+		left: calc(50% - 24px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--green-neon);
+		border-radius: 32px;
+		padding: 8px;
+		width: 32px;
+		height: 32px;
 	}
-
-	h2 span {
-		display: inline-block;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 span {
-		will-change: transform;
-		transform: translateX(2px);
+	.patronMobile{
+		margin-bottom: 64px;
 	}
 </style>
