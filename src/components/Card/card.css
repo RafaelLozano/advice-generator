@@ -30,17 +30,21 @@
 }
 .advice__diceContainer{
 	position: absolute;
-	bottom: -16px;
-	left: calc(50% - 24px);
+	bottom: -24px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--green-neon);
 	border-radius: 32px;
-	padding: 8px;
-	width: 32px;
-	height: 32px;
+	padding: 16px;
+	border: none;
+	transition: transform ease-in-out .3s;
+}
+.advice__diceContainer:hover{
+	transform: scale(1.1);
+    box-shadow: 0 0 .75em .1em var(--green-neon);
+	cursor: pointer;
 }
 .divider{
 	width: 100%;
