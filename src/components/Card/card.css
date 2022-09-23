@@ -46,6 +46,13 @@
     box-shadow: 0 0 .75em .1em var(--green-neon);
 	cursor: pointer;
 }
+.advice__diceContainer:focus-visible{
+	transform: scale(1.1);
+    box-shadow: 0 0 .75em .1em var(--green-neon);
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
 .divider{
 	width: 100%;
 	height: 24px;
