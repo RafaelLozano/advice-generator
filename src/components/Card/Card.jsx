@@ -16,7 +16,7 @@ const Card = () => {
         <article className="advice__card">
             {adviceData ?
             <>
-                <h1>ADVICE #{adviceData?.id}</h1>
+                <h1 data-testid="advice" >ADVICE #{adviceData?.id}</h1>
                 <h2>"{adviceData?.advice}"</h2>
             </>:
             <h2>Cargando...</h2>
