@@ -44,7 +44,7 @@
 	width: 100%;
 	height: 24px;
 	background-repeat: no-repeat;
-	background-image: url('public/dividerDesktop.svg');
+	background-image: url('dividerDesktop.svg');
 	background-position: center;
 	margin-bottom: 32px;
 }
@@ -53,7 +53,7 @@
 		width: 100%;
 		height: 24px;
 		background-repeat: no-repeat;
-		background-image: url('public/dividerMobile.svg');
+		background-image: url('dividerMobile.svg');
 		background-position: center;
 		margin-bottom: 32px;
 	}
